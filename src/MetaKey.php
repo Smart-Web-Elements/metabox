@@ -5,7 +5,7 @@ namespace SweMetaBox;
 /**
  *
  */
-abstract class MetaKey
+abstract class MetaKey extends Information
 {
     /**
      *
@@ -49,7 +49,7 @@ abstract class MetaKey
         $this->key = $key;
         $this->label = $label;
         $this->type = $type;
-        $this->template = $template ?? new Template('partials/'.$defaultTemplateName.'-default.php');
+        $this->template = $template ?? new Template($this->getPartialsPath($defaultTemplateName.'-default.php'));
     }
 
     /**

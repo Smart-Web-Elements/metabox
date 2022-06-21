@@ -43,6 +43,9 @@ class Template
 
         if (locate_template($this->file)) {
             locate_template($this->file, true, false, $this->args);
+        } elseif (file_exists($this->file)) {
+            extract($this->args);
+            include $this->file;
         }
 
         return ob_get_clean();

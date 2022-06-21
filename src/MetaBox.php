@@ -7,7 +7,7 @@ use WP_Post;
 /**
  *
  */
-class MetaBox
+class MetaBox extends Information
 {
     /**
      * @var string
@@ -68,7 +68,7 @@ class MetaBox
         $this->context = $context;
 
         if ($template === null) {
-            $template = new Template('partials/meta-box-default.php');
+            $template = new Template($this->getPartialsPath('meta-box-default.php'));
         }
 
         $this->template = $template;
