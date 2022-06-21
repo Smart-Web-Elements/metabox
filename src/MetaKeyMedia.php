@@ -53,10 +53,6 @@ class MetaKeyMedia extends MetaKey
      */
     public static function getPostMediaId(string $key, ?int $postId = null)
     {
-        if ($postId === null) {
-            $postId = get_the_ID();
-        }
-
-        return get_post_meta($postId, $key, true);
+        return get_post_meta($postId ?? get_the_ID(), $key, true);
     }
 }

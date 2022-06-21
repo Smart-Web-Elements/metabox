@@ -49,7 +49,7 @@ abstract class MetaKey extends Information
         $this->key = $key;
         $this->label = $label;
         $this->type = $type;
-        $this->template = $template ?? new Template($this->getPartialsPath($defaultTemplateName.'-default.php'));
+        $this->template = $template ?? new Template($this->getDefaultPath($defaultTemplateName.'-default.php'));
     }
 
     /**

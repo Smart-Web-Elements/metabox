@@ -45,7 +45,7 @@ echo $term->term_id; ?>" class="toggle">
             foreach ($subterms as $subterm) : ?>
 
                 <?php
-                $listItem = new Template($metaKey->getPartialsPath('meta-key-term-default.php'), array(
+                $listItem = new Template($metaKey->getDefaultPath('meta-key-term-default.php'), array(
                     'term' => $subterm,
                     'metaKey' => $metaKey,
                 )); ?>

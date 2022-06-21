@@ -46,7 +46,7 @@ use SweMetaBox\Template;
         foreach ($termList as $term) : ?>
 
             <?php
-            $listItem = new Template($metaKey->getPartialsPath('meta-key-term-default.php'), [
+            $listItem = new Template($metaKey->getDefaultPath('meta-key-term-default.php'), [
                 'term' => $term,
                 'metaKey' => $metaKey,
             ]); ?>

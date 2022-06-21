@@ -30,10 +30,10 @@ echo $metaKey->getKey(); ?>-desc"
        style="display: <?php
        echo !empty($metaValue) ? 'block' : 'none'; ?>;">
         <?php
-        esc_html_e(sprintf('%s entfernen', $metaKey->getLabel()), TextDomain); ?>
+        esc_html_e(sprintf('%s entfernen', $metaKey->getLabel())); ?>
     </a>
     <a title="<?php
-    esc_html_e(sprintf('%s festlegen', $metaKey->getLabel()), TextDomain); ?>"
+    esc_html_e(sprintf('%s festlegen', $metaKey->getLabel())); ?>"
        href="javascript:"
        id="<?php
        echo $metaKey->getKey(); ?>-upload"
@@ -42,9 +42,9 @@ echo $metaKey->getKey(); ?>-desc"
        data-uploader_title="<?php
        echo $metaKey->getLabel(); ?>"
        data-uploader_button_text="<?php
-       esc_html_e(sprintf('%s festlegen', $metaKey->getLabel()), TextDomain); ?>">
+       esc_html_e(sprintf('%s festlegen', $metaKey->getLabel())); ?>">
         <?php
-        esc_html_e(sprintf('%s festlegen', $metaKey->getLabel()), TextDomain); ?>
+        esc_html_e(sprintf('%s festlegen', $metaKey->getLabel())); ?>
     </a>
 </p>
 <input type="hidden" id="<?php

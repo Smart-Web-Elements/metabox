@@ -5,17 +5,17 @@ namespace SweMetaBox;
 /**
  *
  */
-class Template
+final class Template
 {
     /**
      * @var array
      */
-    protected array $args;
+    private array $args;
 
     /**
      * @var string
      */
-    protected string $file;
+    private string $file;
 
     /**
      * @param string $file
@@ -27,15 +27,19 @@ class Template
     }
 
     /**
+     * Add a variable to the template.
+     *
      * @param string $arg
-     * @param $value
+     * @param mixed $value
      * @return void
      */
-    public function setArg(string $arg, $value) {
+    public function setArg(string $arg, $value): void {
         $this->args[$arg] = $value;
     }
 
     /**
+     * Get the rendered template.
+     *
      * @return string
      */
     public function render(): string {
@@ -46,15 +50,19 @@ class Template
         } elseif (file_exists($this->file)) {
             extract($this->args);
             include $this->file;
+        } else {
+            apply_filters('smb-render-custom', $this->file, $this->args);
         }
 
         return ob_get_clean();
     }
 
     /**
+     * Echo the rendered template.
+     *
      * @return void
      */
-    public function renderEcho() {
+    public function renderEcho(): void {
         echo $this->render();
     }
 }
